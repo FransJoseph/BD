@@ -3,11 +3,11 @@
 <table class="table table-hover table-sm">
     <thead>
         <tr>
-            <th>Lp.</th>
-            <th>Nazwa</th>
-            <th>Ilość</th>
-            <th>jm.</th>
-            <th>Cena</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Thrust (Vac)</th>
+            <th>Isp (Vac)</th>
+            <th>Propellant(s)</th>
         </tr>
     </thead>
     <tbody>
@@ -37,20 +37,20 @@
     </tbody>
 </table>
 
-<h2>Dodawanie towarow do magazynu</h2>
+<h2>Add engine to database:</h2>
 
 <form action="dodaj_towar.php" method="post">
     <div class="form-group">
-        <label for="nazwa">Nazwa:</label>
+        <label for="nazwa">Name</label>
         <input type="text" class="form-control" id="nazwa" name="nazwa" placeholder="Wpisz nazwę" autocomplete="off"
             required>
     </div>
     <div class="form-group">
-        <label for="ilosc">ilosc:</label>
+        <label for="ilosc">Thrust (Vac)</label>
         <input type="number" min="0" step="1" name="ilosc" placeholder="Wpisz ilosc" required>
     </div>
     <div class="form-group">
-        <label for="jm">jm.</label>
+        <label for="jm">Isp (Vac)</label>
         <input list="units" name="jm" placeholder="Wybierz jednostkę" required>
         <datalist id="units">
             <option value="kg">
@@ -62,12 +62,12 @@
 
     </div>
     <div class="form-group">
-        <label for="cena">cena</label>
+        <label for="cena">Propellant(s)</label>
         <input type="number" min="0" step="0.01" name="cena" placeholder="Wpisz cenę" placeholder="cena"
             autocomplete="off" required>
         </textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Dodaj towar</button>
+    <button type="submit" class="btn btn-primary">Add engine</button>
 </form>
 
 </body>

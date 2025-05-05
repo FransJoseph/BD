@@ -1,74 +1,59 @@
-@font-face {
-    font-family: 'JetBrainsMono';
-    src: url('JetBrainsMono-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-body{
-    font-family: 'JetBrainsMono', sans-serif;
-    background-color: #000000;
-    color: #eeeeee;
-    background: url('bg1.jpg') no-repeat center center fixed;
-    background-size: cover;
-}   
-#menu{
-    background-color: #4d55cc00;
-    margin-top:20px;
-   
-}
-#main{
-    background-color: #4841cd6e;
-    border:1px solid #B5A8D5;
-    min-height: 400px;
-    margin-top:20px;
-   
+<h4>Klient:</h4>
 
-}
-#footer{
-    background-color: #151159;
-    color:#eeeeee;
-}
+<form method="POST" action="zapiszOperacje.php">
+<select name="klientID">
+    
+    <?php
+        include 'dbconfig.php';
+        $conn = new mysqli($server, $user, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Błąd połączenia z BD: " . $conn->connect_error);
+        }
 
-#main{
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 10px;
-}
-.jumbotron {
-    padding: 5px;
-}
-.jumbotron, .jumbotron h1{
-    font-size: 2em;
-    color:#4D55CC;
-    text-shadow: 0px 0px 10px #211C84;
+        $zapytanie = "SELECT id,nazwa,adres FROM klienci";
 
-}   
-.table{
-    background-color: #4D55CC;
-    color: #eeeeee;
+        $result = $conn->query($zapytanie);
 
-}
-#main h2{
-    color: #4D55CC;
-    text-shadow: 0px 0px 10px #211C84;
-    margin:10px;
-    display:block;
-}
-p{
-    display: block;
-    margin:auto;
-}
-form{
-    margin: 10px;
-    padding: 10px;
-    background-color: #4D55CC;
-    color: #eeeeee;
-    border: 1px solid #B5A8D5;
-}
-.del, .edit{
-    color:#ffffff;
-    font-weight: bold;
-}
-select{
-    width: 800px;
-}
+        if ($result->num_rows > 0) {
+            $licznik = 1;
+            while ($row = $result->fetch_assoc()) {
+              echo "<option value='".$row['id']."'>".$row['nazwa']." [".$row['adres']."]</option>\n"; 
+            }
+        };
+
+        $conn->close();
+        ?>
+
+
+
+</select>
+
+<h4>Pozycje:</h4>
+<select name="towar1ID">
+    
+    <?php
+        include 'dbconfig.php';
+        $conn = new mysqli($server, $user, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Błąd połączenia z BD: " . $conn->connect_error);
+        }
+
+        $zapytanie = "SELECT id,nazwa FROM towary";
+
+        $result = $conn->query($zapytanie);
+
+        if ($result->num_rows > 0) {
+            $licznik = 1;
+            while ($row = $result->fetch_assoc()) {
+              echo "<option value='".$row['id']."'>".$row['nazwa']."</option>\n"; 
+            }
+        };
+
+        $conn->close();
+        ?>
+
+
+
+</select>
+
+</form>

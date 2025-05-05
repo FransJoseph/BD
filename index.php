@@ -18,28 +18,28 @@
 
 <body>
   <div class="jumbotron text-center">
-    <h1>Sklep kołki i gwoździe</h1>
-    <p>Projekt za zaliczenie BD</p>
+    <h1>Engine Display</h1>
+    <p>Display database</p>
   </div>
 
   <div class="row text-center" id="menu">
     <div class="col-md-12">
       <div class="btn-group">
-        <button type="button" link="home.php" class="link btn btn-primary">HOME</button>
-        <button type="button" link="klienci.php" class="link btn btn-primary">KLIENCI</button>
-        <button type="button" link="towary.php" class="link btn btn-primary">TOWARY</button>
-        <button type="button" link="zamowienia.php" class="link btn btn-primary">Zamówienia</button>
-        <button type="button" link="kontakt.php" class="link btn btn-primary">Kontakt</button>
+        <button type="button" link="home.php" class="link btn btn-primary">Home</button>
+        <button type="button" link="klienci.php" class="link btn btn-primary">Manufacturers</button>
+        <button type="button" link="towary.php" class="link btn btn-primary">List</button>
+        <button type="button" link="zamowienia.php" class="link btn btn-primary">Requests</button>
+        <button type="button" link="kontakt.php" class="link btn btn-primary">Contact</button>
       <?PHP
         session_start();
         if(isset($_SESSION['login'])){?>
 
-          <button type="button" link="logout.php" class="link btn btn-primary"> <i class="bi bi-unlock-fill"></i> LOGOUT</button>
+          <button type="button" link="logout.php" class="link btn btn-primary"> <i class="bi bi-unlock-fill"></i> Logout</button>
         <?PHP
         } 
         else{
           ?>
-          <button type="button" link="logowanie.php" class="link btn btn-primary"> <i class="bi bi-lock-fill"></i> LOGOWANIE</button>
+          <button type="button" link="logowanie.php" class="link btn btn-primary"> <i class="bi bi-lock-fill"></i> Login</button>
       <?PHP } ;
       ?>
        
@@ -50,12 +50,12 @@
   </div>
 
   <div class="row" id="main">
-    <div class="col-md-12">Witaj w sklepie z ......</div>
+    <div class="col-md-12">Welcome to engine display</div>
 
   </div>
 
   <div class="row text-center" id="footer">
-    <div class="col-md-6">(c) AP 2025</div>
+    <div class="col-md-6">(c) FJ 2025</div>
     <div class="col-md-6">All Right Reserved.</div>
   </div>
 

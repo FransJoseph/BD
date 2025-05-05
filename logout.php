@@ -1,5 +1,5 @@
 <?PHP
 session_start();
 session_destroy();
-echo "jesteś wylogowany<br>";
+echo "You have been logged out<br>";
 ?>

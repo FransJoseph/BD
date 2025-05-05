@@ -29,7 +29,7 @@ $conn->close();
 </head>
 
 <body>
-    <h1>Za chwilę nastąpi powrót...</h1>
+    <h1>Please wait...</h1>
 </body>
 
 </html>

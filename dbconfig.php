@@ -3,7 +3,7 @@
 $server="localhost";
 $user="root";
 $password="";
-$dbname="r2is";
+$dbname="r2s";
 
 
 ?>

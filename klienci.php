@@ -3,11 +3,11 @@
 <table class="table table-hover table-sm">
     <thead>
         <tr>
-            <th>Lp.</th>
-            <th>Nazwa</th>
-            <th>Adres</th>
-            <th>Opis</th>
-            <th>Akcja</th>
+            <th>Id</th>
+            <th>Manufacturer</th>
+            <th>Country of origin</th>
+            <th>Description</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -48,25 +48,24 @@
 if(isset($_SESSION['login'])){
 ?>
 
-<h2>Dodawanie klientów</h2>
+<h2>Add manufacturer</h2>
 
 <form action="dodaj_klienta.php" method="post">
     <div class="form-group">
-        <label for="nazwa">Nazwa:</label>
-        <input type="text" class="form-control" id="nazwa" name="nazwa" placeholder="Wpisz nazwę" autocomplete="off">
+        <label for="nazwa">Manufacturer name</label>
+        <input type="text" class="form-control" id="nazwa" name="nazwa" placeholder="Insert name" autocomplete="off">
     </div>
     <div class="form-group">
-        <label for="adres">Adres:</label>
-        <input type="text" class="form-control" id="adres" name="adres" placeholder="Wpisz adres" autocomplete="off">
+        <label for="adres">Country of origin</label>
+        <input type="text" class="form-control" id="adres" name="adres" placeholder="Insert country" autocomplete="off">
     </div>
     <div class="form-group">
-        <label for="opis">Opis:</label>
-        <textarea type="text" class="form-control" id="opis" name="opis" placeholder="Możesz wpisać opis"
-            autocomplete="off">
-        </textarea>
+        <label for="opis">Description</label>
+        <textarea type="text" class="form-control" id="opis" name="opis" placeholder="Not needed"
+            autocomplete="off"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary">Dodaj</button>
+    <button type="submit" class="btn btn-primary">Add</button>
 </form>
 
 <?php

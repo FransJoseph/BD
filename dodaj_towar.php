@@ -26,7 +26,7 @@ $conn->close();
     <script>
         setTimeout(function () {
             window.history.back();
-        }, 10000); // 500 ms = 1 sekunda
+        }, 1000); // 1000 ms = 1 sekunda
     </script>
 </head>
 
